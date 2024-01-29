@@ -5,8 +5,8 @@
   "available": true,
   "exposable": true,
   "id": "nocodb",
-  "tipi_version": 34,
-  "version": "0.204.0",
+  "tipi_version": 39,
+  "version": "0.204.5",
   "categories": [
     "utilities"
   ],
@@ -32,6 +32,13 @@
       "label": "REDIS_PASSWORD",
       "min": 32,
       "env_variable": "NOCODB_REDIS_PASSWORD"
+    },
+    {
+      "type": "number",
+      "label": "Choos the number of rows to display in a table.",
+      "hint": "Leave empty for default 25",
+      "required": false,
+      "env_variable": "NOCODB_TABLE_ROWS"
     }
   ],
   "supported_architectures": [

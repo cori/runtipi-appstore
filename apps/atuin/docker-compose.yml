@@ -6,14 +6,14 @@ services:
     image: ghcr.io/atuinsh/atuin:latest
     command: server start
     volumes:
-      - "${APP_DATA_DIR}:/config"
+      - "${APP_DATA_DIR}/data/config:/config"
     links:
       - postgresql:db
     ports:
-      - 8888:8888
+      - ${APP_PORT}:8888
     environment:
       ATUIN_HOST: "0.0.0.0"
-      ATUIN_OPEN_REGISTRATION: "true"
+      ATUIN_OPEN_REGISTRATION: ${ATUIN_ALLOW_REGISTRATION}
       ATUIN_DB_URI: "postgres://atuin:${ATUIN_DB_PASSWORD}@db/atuin"
     networks:
       - tipi_main_network
@@ -47,7 +47,7 @@ services:
     image: postgres:14
     restart: unless-stopped
     volumes: # Don't remove permanent storage for index database files!
-      - "${APP_DATA_DIR}/data:/var/lib/postgresql/data/"
+      - "${APP_DATA_DIR}/data/postgres:/var/lib/postgresql/data/"
     environment:
       POSTGRES_USER: atuin
       POSTGRES_PASSWORD: "${ATUIN_DB_PASSWORD}"

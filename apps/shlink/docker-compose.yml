@@ -2,7 +2,7 @@ version: "3.9"
 services:
   shlink:
     container_name: shlink
-    image: ghcr.io/shlinkio/shlink:3.7.3
+    image: ghcr.io/shlinkio/shlink:3.7.4
     environment:
       - DEFAULT_DOMAIN=${APP_DOMAIN}
       - IS_HTTPS_ENABLED=true
@@ -46,7 +46,7 @@ services:
       traefik.http.routers.shlink-local.tls: true
   shlink-db:
     container_name: shlink-db
-    image: docker.io/library/postgres:16.1-alpine
+    image: docker.io/library/postgres:16.2-alpine
     restart: unless-stopped
     networks:
       - tipi_main_network

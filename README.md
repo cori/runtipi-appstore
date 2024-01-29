@@ -8,6 +8,9 @@ This is the official repository for the Tipi App Store. It contains all the apps
 - [Activepieces](https://github.com/activepieces/activepieces) - True zapier alternative.
 - [Actual Budget](https://github.com/actualbudget/actual-server) - Local-first OpenSource Budget tool
 - [Adguard](https://github.com/AdguardTeam) - World's most advanced adblocker!
+- [Anse](https://github.com/anse-app/anse) - Fully optimized UI for AI Chats.
+- [ArchiveBox](https://github.com/ArchiveBox/ArchiveBox) - Open source self-hosted web archiving.
+- [Atuin Server](https://github.com/atuinsh/atuin) - Magical Shell History
 - [Audiobookshelf](https://github.com/advplyr/audiobookshelf) - Audiobookshelf is a self-hosted audiobook and podcast server.
 - [Authentik](https://github.com/goauthentik/authentik) - The authentication glue you need.
 - [autobrr](https://github.com/autobrr/autobrr) - Automation for downloads.
@@ -18,6 +21,7 @@ This is the official repository for the Tipi App Store. It contains all the apps
 - [Booksonic](https://github.com/popeen/Booksonic-Air) - The selfhosted audiobook server
 - [Bookstack](https://github.com/BookStackApp/BookStack) - BookStack is a self-hosted platform for organising and storing information.
 - [Budibase](https://github.com/Budibase/budibase) - Internal tools made easy.
+- [Cal.com](https://github.com/calcom/cal.com) - Scheduling infrastructure for absolutely everyone.
 - [Calibre-Web - EBook Reader](https://github.com/janeczku/calibre-web) - Calibre-web is a web app providing a clean interface for browsing, reading and downloading eBooks using an existing Calibre database.
 - [ChangeDetection](https://github.com/dgtlmoon/changedetection.io) - Website change detection.
 - [ChatGPT UI](https://github.com/WongSaang/chatgpt-ui) - A ChatGPT web client that supports multiple users, multiple languages, and multiple database connections for persistent data storage
@@ -69,6 +73,7 @@ This is the official repository for the Tipi App Store. It contains all the apps
 - [Hammond](https://github.com/alfhou/hammond) - Self hosted vehicle and expense management system. Like Clarkson, but better
 - [Haven](https://github.com/havenweb/haven) - Self-hostable private blogging
 - [HedgeDoc](https://github.com/hedgedoc/hedgedoc) - A Collaborative Markdown and Note Taking App
+- [Heimdall](https://github.com/linuxserver/Heimdall) - Application Dashboard
 - [Hello World](https://github.com/crccheck/docker-hello-world) - Hello World web server in under 2 MB
 - [Homarr](https://github.com/ajnart/homarr) - Homarr is a simple and lightweight homepage for your server, that helps you easily access all of your services in one place.
 - [Home Assistant](https://github.com/home-assistant/core) - Open source home automation that puts local control and privacy first
@@ -101,6 +106,7 @@ This is the official repository for the Tipi App Store. It contains all the apps
 - [Lobe Chat](https://github.com/lobehub/lobe-chat) - LLM chatbot framework
 - [Lodestone Core](https://github.com/Lodestone-Team/lodestone_core) - Server hosting tool for Minecraft and other multiplayers
 - [Logto](https://github.com/logto-io/logto) - Logto is a cost-effective open-source alternative to Auth0. 
+- [Maintainerr](https://github.com/jorenn92/Maintainerr) - Maintainerr will manage the storage space on your plex server, launching automated actions to delete your files.
 - [Mastodon](https://github.com/mastodon/mastodon) - Your self-hosted, globally interconnected microblogging community
 - [Conduit](https://gitlab.com/famedly/conduit) - Conduit is a simple, fast and reliable chat server written in Rust
 - [Mealie](https://github.com/hay-kot/mealie) - Mealie is a self-hosted recipe manager and meal planner.
@@ -124,6 +130,7 @@ This is the official repository for the Tipi App Store. It contains all the apps
 - [Netboot.xyz](https://github.com/netbootxyz/netboot.xyz) - Your favorite operating systems in one place.
 - [Netdata](https://github.com/netdata/netdata) - Open-source, real-time, performance and health monitoring.
 - [Nextcloud](https://github.com/nextcloud/server) - Productivity platform that keeps you in control
+- [NextGBA](https://github.com/meienberger/nextgba) - Gameboy in your browser
 - [Nginx](https://github.com/nginx/nginx) - Open-source simple and fast web server.
 - [Nitter](https://github.com/zedeus/nitter) - Twitter without annoyances!
 - [NocoDB](https://github.com/nocodb/nocodb) - Open Source Airtable Alternative
@@ -173,6 +180,7 @@ This is the official repository for the Tipi App Store. It contains all the apps
 - [Serge](https://github.com/serge-chat/serge) - LLaMA made easy
 - [SFTPGo](https://github.com/drakkan/sftpgo) - Fully featured and highly configurable SFTP server
 - [Shlink](https://github.com/shlinkio/shlink) - Shlink is a self-hosted URL shortener
+- [Silverbullet](https://github.com/silverbulletmd/silverbullet) - SilverBullet is a creative space where you collect, create and expand your personal knowledge, while also letting you constantly evolve the tools you use to do so.
 - [SimpleX SMP](https://github.com/simplex-chat/simplexmq) - A reference implementation of the SimpleX Messaging Protocol for simplex queues over public networks.
 - [Sonarr](https://github.com/Sonarr/Sonarr) - TV show manager for Usenet and BitTorrent
 - [Speedtest Tracker](https://github.com/alexjustesen/speedtest-tracker) - Internet performance tracking application.
