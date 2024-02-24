@@ -6,7 +6,7 @@
   "port": 8888,
   "id": "atuin",
   "tipi_version": 1,
-  "version": "latest",
+  "version": "18.0.1",
   "categories": [
     "utilities",
     "development"
