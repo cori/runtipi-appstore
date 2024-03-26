@@ -1,22 +1,23 @@
 {
   "$schema": "../schema.json",
-  "name": "Mixtral In Docker",
+  "name": "LocalAI",
   "available": true,
   "exposable": true,
-  "port": 8900,
-  "id": "mixtral-in-docker",
+  "port": 19999,
+  "id": "localai",
   "tipi_version": 1,
   "version": "latest",
   "categories": [
     "utilities",
-    "development"
+    "development",
+    "ai"
   ],
-  "description": "Mixtral 8x7b API in Docker",
-  "short_desc": "Mixtral 8x7b API in Docker",
+  "description": "OpenAI API-compatible drop-in",
+  "short_desc": "OpenAI API-compatible drop-in",
   "form_fields": [],
   "author": "https://github.com/cori",
   "source": "https://github.com/cori/DLaMaFiles",
-  "no_gui": true,
+  "no_gui": false,
   "supported_architectures": [
     "amd64",
     "arm64"
