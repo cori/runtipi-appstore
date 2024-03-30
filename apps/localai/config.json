@@ -3,10 +3,10 @@
   "name": "LocalAI",
   "available": true,
   "exposable": true,
-  "port": 19999,
+  "port": 19876,
   "id": "localai",
-  "tipi_version": 1,
-  "version": "latest",
+  "tipi_version": 2,
+  "version": "master-cublas-cuda12-core",
   "categories": [
     "utilities",
     "development",
