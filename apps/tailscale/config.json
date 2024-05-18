@@ -4,8 +4,8 @@
   "available": true,
   "port": 8093,
   "id": "tailscale",
-  "tipi_version": 26,
-  "version": "1.64.2",
+  "tipi_version": 27,
+  "version": "stable",
   "categories": [
     "network",
     "security"
