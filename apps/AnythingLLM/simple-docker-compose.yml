@@ -1,0 +1,10 @@
+version: '3'
+services:
+  web:
+    image: nginx:latest
+    container_name: my-web-server
+    ports:
+      - "38080:80"
+    volumes:
+      - ./html:/usr/share/nginx/html
+
