@@ -1,11 +1,11 @@
 {
   "name": "Weaviate",
   "available": true,
-  "port": 8080,
+  "port": 38080,
   "exposable": true,
   "id": "weaviate",
   "description": "Weaviate is an open-source vector search engine.",
-  "tipi_version": 26,
+  "tipi_version": 1,
   "version": "latest",
   "categories": ["search", "database"],
   "short_desc": "Open-source vector search engine.",
