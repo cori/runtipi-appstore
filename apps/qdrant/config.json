@@ -6,7 +6,7 @@
   "port": 6333,
   "id": "qdrant",
   "tipi_version": 1,
-  "version": "v1.1.0",
+  "version": "v1.9.4",
   "categories": [
     "database"
   ],
