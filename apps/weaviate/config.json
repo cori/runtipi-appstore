@@ -6,7 +6,7 @@
   "id": "weaviate",
   "description": "Weaviate is an open-source vector search engine.",
   "tipi_version": 1,
-  "version": "1.14.0",
+  "version": "1.24.16",
   "categories": ["search", "database"],
   "short_desc": "Open-source vector search engine.",
   "author": "Weaviate",
