@@ -4,3 +4,4 @@ github.secrets
 .DS_Store
 .nova
 .vscode/
+.aider*
