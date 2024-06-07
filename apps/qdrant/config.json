@@ -1,0 +1,19 @@
+{
+  "$schema": "../schema.json",
+  "name": "Qdrant Vector Database",
+  "available": true,
+  "exposable": true,
+  "port": 6333,
+  "id": "qdrant",
+  "tipi_version": 2,
+  "version": "latest",
+  "categories": [
+    "database"
+  ],
+  "description": "Qdrant is a vector similarity search engine and vector database.",
+  "short_desc": "Vector similarity search engine and vector database.",
+  "author": "Qdrant",
+  "source": "https://github.com/qdrant/qdrant",
+  "form_fields": [],
+  "supported_architectures": ["amd64"]
+}
