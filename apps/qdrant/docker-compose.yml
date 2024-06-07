@@ -9,33 +9,33 @@ services:
       - "6334:6334"
     volumes:
       - ./qdrant_storage:/qdrant/storage
-    # networks:
-    #   - tipi_main_network
-    # labels:
-    #   # Main
-    #   traefik.enable: true
-    #   traefik.http.middlewares.qdrant-web-redirect.redirectscheme.scheme: https
-    #   traefik.http.services.qdrant.loadbalancer.server.port: 6333
-    #   # Web
-    #   traefik.http.routers.qdrant-insecure.rule: Host(`${APP_DOMAIN}`)
-    #   traefik.http.routers.qdrant-insecure.entrypoints: web
-    #   traefik.http.routers.qdrant-insecure.service: qdrant
-    #   traefik.http.routers.qdrant-insecure.middlewares: qdrant-web-redirect
-    #   # Websecure
-    #   traefik.http.routers.qdrant.rule: Host(`${APP_DOMAIN}`)
-    #   traefik.http.routers.qdrant.entrypoints: websecure
-    #   traefik.http.routers.qdrant.service: qdrant
-    #   traefik.http.routers.qdrant.tls.certresolver: myresolver
-    #   # Local domain
-    #   traefik.http.routers.qdrant-local-insecure.rule: Host(`qdrant.${LOCAL_DOMAIN}`)
-    #   traefik.http.routers.qdrant-local-insecure.entrypoints: web
-    #   traefik.http.routers.qdrant-local-insecure.service: qdrant
-    #   traefik.http.routers.qdrant-local-insecure.middlewares: qdrant-web-redirect
-    #   # Local domain secure
-    #   traefik.http.routers.qdrant-local.rule: Host(`qdrant.${LOCAL_DOMAIN}`)
-    #   traefik.http.routers.qdrant-local.entrypoints: websecure
-    #   traefik.http.routers.qdrant-local.service: qdrant
-    #   traefik.http.routers.qdrant-local.tls: true
-# networks:
-#   tipi_main_network:
-#     external: true
+    networks:
+      - tipi_main_network
+    labels:
+      # Main
+      traefik.enable: true
+      traefik.http.middlewares.qdrant-web-redirect.redirectscheme.scheme: https
+      traefik.http.services.qdrant.loadbalancer.server.port: 6333
+      # Web
+      traefik.http.routers.qdrant-insecure.rule: Host(`${APP_DOMAIN}`)
+      traefik.http.routers.qdrant-insecure.entrypoints: web
+      traefik.http.routers.qdrant-insecure.service: qdrant
+      traefik.http.routers.qdrant-insecure.middlewares: qdrant-web-redirect
+      # Websecure
+      traefik.http.routers.qdrant.rule: Host(`${APP_DOMAIN}`)
+      traefik.http.routers.qdrant.entrypoints: websecure
+      traefik.http.routers.qdrant.service: qdrant
+      traefik.http.routers.qdrant.tls.certresolver: myresolver
+      # Local domain
+      traefik.http.routers.qdrant-local-insecure.rule: Host(`qdrant.${LOCAL_DOMAIN}`)
+      traefik.http.routers.qdrant-local-insecure.entrypoints: web
+      traefik.http.routers.qdrant-local-insecure.service: qdrant
+      traefik.http.routers.qdrant-local-insecure.middlewares: qdrant-web-redirect
+      # Local domain secure
+      traefik.http.routers.qdrant-local.rule: Host(`qdrant.${LOCAL_DOMAIN}`)
+      traefik.http.routers.qdrant-local.entrypoints: websecure
+      traefik.http.routers.qdrant-local.service: qdrant
+      traefik.http.routers.qdrant-local.tls: true
+networks:
+  tipi_main_network:
+    external: true
