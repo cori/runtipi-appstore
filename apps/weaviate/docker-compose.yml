@@ -1,0 +1,24 @@
+version: '3.7'
+services:
+  weaviate:
+    image: semitechnologies/weaviate:latest
+    container_name: weaviate
+    restart: unless-stopped
+    ports:
+      - '8080:8080'
+    environment:
+      - QUERY_DEFAULTS_LIMIT=20
+      - AUTHENTICATION_ANONYMOUS_ACCESS_ENABLED=true
+      - PERSISTENCE_DATA_PATH=/var/lib/weaviate
+      - DEFAULT_VECTORIZER_MODULE=text2vec-transformers
+      - ENABLE_MODULES=text2vec-transformers
+    volumes:
+      - weaviate-data:/var/lib/weaviate
+    networks:
+      - weaviate-network
+
+volumes:
+  weaviate-data:
+
+networks:
+  weaviate-network:

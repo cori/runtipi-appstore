@@ -1,0 +1,17 @@
+{
+  "name": "Weaviate",
+  "available": true,
+  "port": 8080,
+  "exposable": true,
+  "id": "weaviate",
+  "description": "Weaviate is an open-source vector search engine.",
+  "tipi_version": 26,
+  "version": "latest",
+  "categories": ["search", "database"],
+  "short_desc": "Open-source vector search engine.",
+  "author": "Weaviate",
+  "source": "https://github.com/semi-technologies/weaviate",
+  "website": "https://weaviate.io/",
+  "form_fields": [],
+  "supported_architectures": ["arm64", "amd64"]
+}
