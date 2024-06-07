@@ -5,8 +5,8 @@
   "exposable": true,
   "port": 6333,
   "id": "qdrant",
-  "tipi_version": 2,
-  "version": "latest",
+  "tipi_version": 1,
+  "version": "1.9.4",
   "categories": [
     "database"
   ],
