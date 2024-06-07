@@ -1,24 +1,42 @@
-version: '3.7'
+version: "3.9"
 services:
   weaviate:
-    image: semitechnologies/weaviate:latest
     container_name: weaviate
+    image: semitechnologies/weaviate:latest
     restart: unless-stopped
-    ports:
-      - '8080:8080'
     environment:
       - QUERY_DEFAULTS_LIMIT=20
       - AUTHENTICATION_ANONYMOUS_ACCESS_ENABLED=true
       - PERSISTENCE_DATA_PATH=/var/lib/weaviate
       - DEFAULT_VECTORIZER_MODULE=text2vec-transformers
       - ENABLE_MODULES=text2vec-transformers
+      - TZ=${TZ}
     volumes:
-      - weaviate-data:/var/lib/weaviate
+      - ${APP_DATA_DIR}/data/weaviate:/var/lib/weaviate
+    ports:
+      - ${APP_PORT}:8080
     networks:
-      - weaviate-network
-
-volumes:
-  weaviate-data:
+      - tipi_main_network
+    labels:
+      traefik.enable: true
+      traefik.http.middlewares.weaviate-web-redirect.redirectscheme.scheme: https
+      traefik.http.services.weaviate.loadbalancer.server.port: 8080
+      traefik.http.routers.weaviate-insecure.rule: Host(`${APP_DOMAIN}`)
+      traefik.http.routers.weaviate-insecure.entrypoints: web
+      traefik.http.routers.weaviate-insecure.service: weaviate
+      traefik.http.routers.weaviate-insecure.middlewares: weaviate-web-redirect
+      traefik.http.routers.weaviate.rule: Host(`${APP_DOMAIN}`)
+      traefik.http.routers.weaviate.entrypoints: websecure
+      traefik.http.routers.weaviate.service: weaviate
+      traefik.http.routers.weaviate.tls.certresolver: myresolver
+      traefik.http.routers.weaviate-local-insecure.rule: Host(`weaviate.${LOCAL_DOMAIN}`)
+      traefik.http.routers.weaviate-local-insecure.entrypoints: web
+      traefik.http.routers.weaviate-local-insecure.service: weaviate
+      traefik.http.routers.weaviate-local-insecure.middlewares: weaviate-web-redirect
+      traefik.http.routers.weaviate-local.rule: Host(`weaviate.${LOCAL_DOMAIN}`)
+      traefik.http.routers.weaviate-local.entrypoints: websecure
+      traefik.http.routers.weaviate-local.service: weaviate
+      traefik.http.routers.weaviate-local.tls: true
 
 networks:
-  weaviate-network:
+  tipi_main_network:
