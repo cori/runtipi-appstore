@@ -2,7 +2,7 @@ version: "3.9"
 services:
   weaviate:
     container_name: weaviate
-    image: semitechnologies/weaviate:latest
+    image: semitechnologies/weaviate:1.14.0
     restart: unless-stopped
     environment:
       - QUERY_DEFAULTS_LIMIT=20
