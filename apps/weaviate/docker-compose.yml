@@ -14,7 +14,7 @@ services:
     volumes:
       - ${APP_DATA_DIR}/data/weaviate:/var/lib/weaviate
     ports:
-      - ${APP_PORT}:8080
+      - ${APP_PORT}:38080
     networks:
       - tipi_main_network
     labels:
