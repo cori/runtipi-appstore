@@ -9,8 +9,8 @@ services:
     cap_add:
       - SYS_ADMIN
     volumes:
-      - ${STORAGE_LOCATION}:/app/server/storage
-      - ${STORAGE_LOCATION}/.env:/app/server/.env
+      - ${APP_DATA}/anything-llm/storage:/app/server/storage
+      - ${APP_DATA}/anything-llm/.env:/app/server/.env
     labels:
       # Main
       traefik.enable: true
