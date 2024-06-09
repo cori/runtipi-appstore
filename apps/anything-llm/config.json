@@ -3,7 +3,7 @@
   "name": "AnythingLLM",
   "available": true,
   "exposable": true,
-  "port": "${APP_PORT}",
+  "port": 3001,
   "id": "anything-llm",
   "tipi_version": 2,
   "version": "latest",
