@@ -5,14 +5,14 @@ services:
     image: ghcr.io/mintplex-labs/anything-llm:latest
     restart: unless-stopped
     ports:
-      - ${APP_PORT}:3000
+      - ${APP_PORT}:3001
     networks:
       - tipi_main_network
     environment:
       - OPENAI_API_KEY=${OPENAI_API_KEY}
       - MONGO_URI=mongodb://mongo:27017/llm
       - JWT_SECRET=${JWT_SECRET}
-      - PORT=3000
+      - PORT=3001
     labels:
       # Main
       traefik.enable: true
