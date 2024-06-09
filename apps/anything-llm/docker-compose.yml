@@ -5,7 +5,7 @@ services:
     image: ghcr.io/mintplex-labs/anything-llm:latest
     restart: unless-stopped
     ports:
-      - 3001:3001
+      - ${PORT}:3001
     cap_add:
       - SYS_ADMIN
     volumes:
