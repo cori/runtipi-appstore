@@ -3,9 +3,9 @@
   "name": "AnythingLLM",
   "available": true,
   "exposable": true,
-  "port": 3001,
+  "port": 33001,
   "id": "anything-llm",
-  "tipi_version": 1,
+  "tipi_version": 2,
   "version": "latest",
   "categories": [
     "utilities",
