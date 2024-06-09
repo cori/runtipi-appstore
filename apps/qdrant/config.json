@@ -3,9 +3,7 @@
   "name": "Qdrant Vector Database",
   "available": true,
   "exposable": true,
-  "name": "Qdrant Vector Database",
   "id": "qdrant",
-  "available": true,
   "short_desc": "Vector similarity search engine and vector database.",
   "author": "Qdrant",
   "port": 6333,
@@ -14,10 +12,7 @@
   "tipi_version": 1,
   "version": "v1.1.0",
   "source": "https://github.com/qdrant/qdrant",
-  "exposable": true,
   "supported_architectures": ["amd64"],
   "website": "https://qdrant.tech/",
-  "documentation": "https://qdrant.tech/documentation/",
-  "license": "Apache-2.0",
   "form_fields": []
 }

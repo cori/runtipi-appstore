@@ -2,15 +2,13 @@ version: "3.9"
 services:
   qdrant:
     container_name: qdrant
-    image: qdrant/qdrant:v1.1.0
+    image: qdrant/qdrant:v1.9.4
     restart: unless-stopped
-    environment:
-      - TZ=${TZ}
     volumes:
       - ${APP_DATA_DIR}/data/qdrant_storage:/qdrant/storage
+      - ${APP_DATA_DIR}/data/qdrant_snapshots:/qdrant/snapshots
     ports:
       - ${APP_PORT}:6333
-      - "6334:6334"
     networks:
       - tipi_main_network
     labels:
@@ -38,6 +36,3 @@ services:
       traefik.http.routers.qdrant-local.entrypoints: websecure
       traefik.http.routers.qdrant-local.service: qdrant
       traefik.http.routers.qdrant-local.tls: true
-networks:
-  tipi_main_network:
-    external: true
