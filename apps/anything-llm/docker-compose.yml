@@ -11,8 +11,8 @@ services:
     cap_add:
       - SYS_ADMIN
     volumes:
-      - ${APP_DATA_DIR}/anything-llm/storage:/app/server/storage
-      - ${APP_DATA_DIR}/anything-llm/.env:/app/server/.env
+      - ${APP_DATA_DIR}/storage:/app/server/storage
+      - ${APP_DATA_DIR}/.env:/app/server/.env
     networks:
       - tipi_main_network
     labels:
