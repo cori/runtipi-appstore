@@ -2,17 +2,22 @@ version: "3.7"
 services:
   anything-llm:
     container_name: anything-llm
-    image: author_name/anything-llm:latest
+    image: ghcr.io/mintplex-labs/anything-llm:latest
     restart: unless-stopped
     ports:
-      - ${APP_PORT}:8000
+      - ${APP_PORT}:3000
     networks:
       - tipi_main_network
+    environment:
+      - OPENAI_API_KEY=${OPENAI_API_KEY}
+      - MONGO_URI=mongodb://mongo:27017/llm
+      - JWT_SECRET=${JWT_SECRET}
+      - PORT=3000
     labels:
       # Main
       traefik.enable: true
       traefik.http.middlewares.anything-llm-web-redirect.redirectscheme.scheme: https
-      traefik.http.services.anything-llm.loadbalancer.server.port: 8000
+      traefik.http.services.anything-llm.loadbalancer.server.port: 3000
       # Web
       traefik.http.routers.anything-llm-insecure.rule: Host(`${APP_DOMAIN}`)
       traefik.http.routers.anything-llm-insecure.entrypoints: web
