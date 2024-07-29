@@ -10,16 +10,18 @@ If you want to see new apps on Tipi you can either:
 - [Join the Discord](https://discord.gg/Bu9qEPnHsc) members of the community will add it.
 - Fork this repo and create the necessary files for a Tipi app. Follow this [guide](https://www.runtipi.io/docs/contributing/adding-a-new-app)`
 
-## Apps available (251)
+## Apps available (253)
 
 | Name                                                                         | Description                                                                                                                                                         | Port  |
 | ---------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ----- |
 | [2FAuth](https://github.com/Bubka/2FAuth)                                    | Manage your Two-Factor Authentication codes.                                                                                                                        | 8235  |
+| [Atuin Server](https://github.com/atuinsh/atuin)                             | Magical Shell History                                                                                                                                               | 8888  |
 | [Activepieces](https://github.com/activepieces/activepieces)                 | True zapier alternative.                                                                                                                                            | 8605  |
 | [Actual Budget](https://github.com/actualbudget/actual-server)               | Local-first OpenSource Budget tool                                                                                                                                  | 8011  |
 | [Adguard](https://github.com/AdguardTeam)                                    | World's most advanced adblocker!                                                                                                                                    | 8104  |
 | [AFFiNE](https://github.com/toeverything/affine)                             | AFFiNE is a workspace with fully merged docs, whiteboards and databases.                                                                                            | 3010  |
 | [Anse](https://github.com/anse-app/anse)                                     | Fully optimized UI for AI Chats.                                                                                                                                    | 8014  |
+| [AnythingLLM](https://github.com/Mintplex-Labs/anything-llm)                 | AnythingLLM web server                                                                                                                                              | 33001 |
 | [ArchiveBox](https://github.com/ArchiveBox/ArchiveBox)                       | Open source self-hosted web archiving.                                                                                                                              | 8015  |
 | [Atuin Server](https://github.com/atuinsh/atuin)                             | Magical Shell History                                                                                                                                               | 8888  |
 | [Audiobookshelf](https://github.com/advplyr/audiobookshelf)                  | Audiobookshelf is a self-hosted audiobook and podcast server.                                                                                                       | 13378 |
