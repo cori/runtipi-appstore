@@ -1,0 +1,63 @@
+services:
+  fooocus:
+    container_name: fooocus
+    image: lllyasviel/fooocus:2.5.5
+    restart: unless-stopped
+    ports:
+      - ${APP_PORT}:7865
+    environment:
+      - CMDARGS=--listen    # Arguments for launch.py.
+      - DATADIR=/content/data   # Directory which stores models, outputs dir
+      - config_path=/content/data/config.txt
+      - config_example_path=/content/data/config_modification_tutorial.txt
+      - path_checkpoints=/content/data/models/checkpoints/
+      - path_loras=/content/data/models/loras/
+      - path_embeddings=/content/data/models/embeddings/
+      - path_vae_approx=/content/data/models/vae_approx/
+      - path_upscale_models=/content/data/models/upscale_models/
+      - path_inpaint=/content/data/models/inpaint/
+      - path_controlnet=/content/data/models/controlnet/
+      - path_clip_vision=/content/data/models/clip_vision/
+      - path_fooocus_expansion=/content/data/models/prompt_expansion/fooocus_expansion/
+      - path_outputs=/content/app/outputs/    # Warning: If it is not located under '/content/app', you can't see history log!
+    volumes:
+      - ${APP_DATA_DIR}/content:/content/data
+      - ${APP_DATA_DIR}/models:/import/models   # Once you import files, you don't need to mount again.
+      - ${APP_DATA_DIR}/outputs:/import/outputs  # Once you import files, you don't need to mount again.
+    deploy:
+      resources:
+        reservations:
+          devices:
+            - driver: nvidia
+              count: all
+              capabilities:
+                - gpu
+    networks:
+      - tipi_main_network
+    labels:
+      # Main
+      traefik.enable: true
+      traefik.http.middlewares.fooocus-web-redirect.redirectscheme.scheme: https
+      traefik.http.services.fooocus.loadbalancer.server.port: 7865
+      # Web
+      traefik.http.routers.fooocus-insecure.rule: Host(`${APP_DOMAIN}`)
+      traefik.http.routers.fooocus-insecure.entrypoints: web
+      traefik.http.routers.fooocus-insecure.service: fooocus
+      traefik.http.routers.fooocus-insecure.middlewares: fooocus-web-redirect
+      # Websecure
+      traefik.http.routers.fooocus.rule: Host(`${APP_DOMAIN}`)
+      traefik.http.routers.fooocus.entrypoints: websecure
+      traefik.http.routers.fooocus.service: fooocus
+      traefik.http.routers.fooocus.tls.certresolver: myresolver
+      # Local domain
+      traefik.http.routers.fooocus-local-insecure.rule: Host(`fooocus.${LOCAL_DOMAIN}`)
+      traefik.http.routers.fooocus-local-insecure.entrypoints: web
+      traefik.http.routers.fooocus-local-insecure.service: fooocus
+      traefik.http.routers.fooocus-local-insecure.middlewares: fooocus-web-redirect
+      # Local domain secure
+      traefik.http.routers.fooocus-local.rule: Host(`fooocus.${LOCAL_DOMAIN}`)
+      traefik.http.routers.fooocus-local.entrypoints: websecure
+      traefik.http.routers.fooocus-local.service: fooocus
+      traefik.http.routers.fooocus-local.tls: true
+      runtipi.managed: true
+
