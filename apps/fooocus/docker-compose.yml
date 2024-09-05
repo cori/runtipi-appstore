@@ -1,7 +1,7 @@
 services:
   fooocus:
     container_name: fooocus
-    image: lllyasviel/fooocus:2.5.5
+    image: ghcr.io/lllyasviel/fooocus:2.5.5
     restart: unless-stopped
     ports:
       - ${APP_PORT}:7865
