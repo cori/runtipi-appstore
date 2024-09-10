@@ -12,7 +12,7 @@ services:
     environment:
       - NODE_ENV=production
       - TRUST_PROXY_HEADER=1
-      - DB_URL=postgres://tipi:${LOGTO_DB_PASSWORD}@logto-db:5432/logto
+      - DB_URL=postgres://postgres:${LOGTO_DB_PASSWORD}@postgres:5432/logto
       - ENDPOINT=https://${APP_DOMAIN}
       - ADMIN_ENDPOINT=https://${LOGTO_ADMIN_URL}
     networks:
@@ -30,38 +30,20 @@ services:
       traefik.http.routers.logto-admin.tls.certresolver: myresolver
       traefik.http.services.logto-admin.loadbalancer.server.port: 3002
       runtipi.managed: true
-  # logto-db:
-  #   container_name: logto-db
-  #   image: postgres:14
-  #   restart: unless-stopped
-  #   environment:
-  #     - POSTGRES_USER=tipi
-  #     - POSTGRES_PASSWORD=${LOGTO_DB_PASSWORD}
-  #     - POSTGRES_DB=logto
-  #   volumes:
-  #     - ${APP_DATA_DIR}/data/postgres:/var/lib/postgresql/data
-  #   healthcheck:
-  #     test: ["CMD-SHELL", "pg_isready"]
-  #     interval: 10s
-  #     timeout: 5s
-  #     retries: 5
-  #   networks:
-  #     - tipi_main_network
-  #   labels:
-  #     runtipi.managed: true
   logto-db:
     container_name: logto-db
     image: postgres:14-alpine
     user: postgres
     restart: unless-stopped
     environment:
-      POSTGRES_USER: tipi
-      POSTGRES_PASSWORD: ${LOGTO_DB_PASSWORD}
-      POSTGRES_DB: logto
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=${LOGTO_DB_PASSWORD}
+      - POSTGRES_DB=logto
+      - DB_URL=postgres://postgres:${LOGTO_DB_PASSWORD}@postgres:5432/logto
     volumes:
       - ${APP_DATA_DIR}/data/postgres:/var/lib/postgresql/data
     healthcheck:
-      test: [ "CMD-SHELL", "pg_isready -U postgres" ]
+      test: [ "CMD-SHELL", "pg_isready" ]
       interval: 10s
       timeout: 5s
       retries: 5
