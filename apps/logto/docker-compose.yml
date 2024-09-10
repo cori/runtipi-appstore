@@ -39,7 +39,6 @@ services:
       - POSTGRES_USER=postgres
       - POSTGRES_PASSWORD=${LOGTO_DB_PASSWORD}
       - POSTGRES_DB=logto
-      - DB_URL=postgres://postgres:${LOGTO_DB_PASSWORD}@postgres:5432/logto
     volumes:
       - ${APP_DATA_DIR}/data/postgres:/var/lib/postgresql/data
     healthcheck:
