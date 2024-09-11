@@ -12,7 +12,7 @@ services:
     environment:
       - NODE_ENV=production
       - TRUST_PROXY_HEADER=1
-      - DB_URL=postgres://postgres:${LOGTO_DB_PASSWORD}@postgres:5432/logto
+      - DB_URL=postgres://postgres:${LOGTO_DB_PASSWORD}@logto-db:5432/logto
       - ENDPOINT=https://${APP_DOMAIN}
       - ADMIN_ENDPOINT=https://${LOGTO_ADMIN_URL}
     networks:
