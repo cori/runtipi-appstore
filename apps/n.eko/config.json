@@ -2,8 +2,8 @@
     "author": "m1k1o",
     "available": true,
     "categories": [
-        "browser",
-        "remote-access"
+        "social",
+        "utilities"
     ],
     "created_at": 1726269584000,
     "description": "A self-hosted virtual browser that runs in Docker and uses WebRTC.",
