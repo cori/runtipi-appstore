@@ -1,0 +1,33 @@
+{
+    "author": "m1k1o",
+    "available": true,
+    "categories": [
+        "social",
+        "utilities"
+    ],
+    "created_at": 1726269584000,
+    "description": "A self-hosted virtual browser that runs in Docker and uses WebRTC.",
+    "exposable": true,
+    "id": "neko",
+    "name": "n.eko",
+    "port": 8080,
+    "short_desc": "Self-hosted virtual browser (VNC) with WebRTC.",
+    "source": "https://github.com/m1k1o/neko",
+    "tipi_version": 1,
+    "updated_at": 1726269584000,
+    "version": "2.5.1",
+    "form_fields": [
+        {
+            "type": "text",
+            "label": "User Password",
+            "env_variable": "NEKO_PASSWORD",
+            "required": true
+        },
+        {
+            "type": "text",
+            "label": "Admin Password",
+            "env_variable": "NEKO_PASSWORD_ADMIN",
+            "required": true
+        }
+    ]
+}

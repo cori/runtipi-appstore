@@ -1,0 +1,44 @@
+services:
+  neko:
+    container_name: neko
+    image: ghcr.io/m1k1o/neko/ungoogled-chromium:2.5.1
+    restart: unless-stopped
+    shm_size: "2gb"
+    ports:
+      - ${APP_PORT}:8080
+      - 59000-59100:59000-59100/udp
+    environment:
+      - NEKO_PASSWORD=${NEKO_PASSWORD}
+      - NEKO_PASSWORD_ADMIN=${NEKO_PASSWORD_ADMIN}
+      - NEKO_BIND=:8080
+      - NEKO_EPR=59000-59100
+      - NEKO_ICELITE=1
+    volumes:
+      - ${APP_DATA_DIR}/browser-data:/home/neko/.config/chromium
+    networks:
+      - tipi_main_network
+    labels:
+      traefik.enable: true
+      traefik.http.middlewares.neko-web-redirect.redirectscheme.scheme: https
+      traefik.http.services.neko.loadbalancer.server.port: 8080
+      # Web
+      traefik.http.routers.neko-insecure.rule: Host(`${APP_DOMAIN}`)
+      traefik.http.routers.neko-insecure.entrypoints: web
+      traefik.http.routers.neko-insecure.service: neko
+      traefik.http.routers.neko-insecure.middlewares: neko-web-redirect
+      # Websecure
+      traefik.http.routers.neko.rule: Host(`${APP_DOMAIN}`)
+      traefik.http.routers.neko.entrypoints: websecure
+      traefik.http.routers.neko.service: neko
+      traefik.http.routers.neko.tls.certresolver: myresolver
+      # Local domain
+      traefik.http.routers.neko-local-insecure.rule: Host(`neko.${LOCAL_DOMAIN}`)
+      traefik.http.routers.neko-local-insecure.entrypoints: web
+      traefik.http.routers.neko-local-insecure.service: neko
+      traefik.http.routers.neko-local-insecure.middlewares: neko-web-redirect
+      # Local domain secure
+      traefik.http.routers.neko-local.rule: Host(`neko.${LOCAL_DOMAIN}`)
+      traefik.http.routers.neko-local.entrypoints: websecure
+      traefik.http.routers.neko-local.service: neko
+      traefik.http.routers.neko-local.tls: true
+      runtipi.managed: true
