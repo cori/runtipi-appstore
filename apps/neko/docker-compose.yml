@@ -12,7 +12,8 @@ services:
       - NEKO_PASSWORD_ADMIN=${NEKO_PASSWORD_ADMIN}
       - NEKO_BIND=:8080
       - NEKO_EPR=59000-59100
-      - NEKO_ICELITE=1
+      - NEKO_PROXY=true
+      - NEKO_FILE_TRANSFER_ENABLED=true
     volumes:
       - ${APP_DATA_DIR}/browser-data:/home/neko/.config/chromium
     networks:
