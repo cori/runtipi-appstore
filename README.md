@@ -1,17 +1,5 @@
 # Tipi App Store ⛺️
 
-> [!WARNING]
-> Unfortunately, we are no longer accepting pull requests from external collaborators due to the high volume of PRs we have to deal with daily.
->
-> We have reached a point in which it has become too complicated to validate, test and maintain this huge amount of apps resulting in a poor experience for our users.
->
-> We are working at the moment to implement a new feature to allow you to add multiple app stores to your Runtipi instance, so you can add your own apps without the need to send a PR to our repository.
->
-> This feature will be available very soon, so stay tuned!
->
-> You can still follow this guide and add your custom apps to your own instance through the appsRepoUrl property in the settings.json file.
->
-
 This is the official repository for the Tipi App Store. It contains all the apps that are available for download on [Tipi](https://github.com/runtipi/runtipi).
 
 ## How to get started
@@ -32,10 +20,11 @@ If you want to see new apps on Tipi you can either:
 - [Join the Discord](https://discord.gg/Bu9qEPnHsc) members of the community will add it.
 - Fork this repo and create the necessary files for a Tipi app. Follow this [guide](https://www.runtipi.io/docs/contributing/adding-a-new-app)`
 
-## Apps available (267)
+## Apps available (272)
 
 | Name                                                                         | Description                                                                                                                                                         | Port  |
 | ---------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ----- |
+| [13 Feet Ladder](https://github.com/wasi-master/13ft)                        | Bypass ads and paywalls with your own 12ft.io replacement.                                                                                                          | 5013  |
 | [2FAuth](https://github.com/Bubka/2FAuth)                                    | Manage your Two-Factor Authentication codes.                                                                                                                        | 8235  |
 | [Activepieces](https://github.com/activepieces/activepieces)                 | True zapier alternative.                                                                                                                                            | 8605  |
 | [Actual Budget](https://github.com/actualbudget/actual-server)               | Local-first OpenSource Budget tool                                                                                                                                  | 8011  |
@@ -43,6 +32,7 @@ If you want to see new apps on Tipi you can either:
 | [Adguard Home Sync](https://github.com/bakito/adguardhome-sync)              | Synchronize AdGuard Home config to replicas                                                                                                                         | 8436  |
 | [AFFiNE](https://github.com/toeverything/affine)                             | AFFiNE is a workspace with fully merged docs, whiteboards and databases.                                                                                            | 3010  |
 | [Anse](https://github.com/anse-app/anse)                                     | Fully optimized UI for AI Chats.                                                                                                                                    | 8014  |
+| [AnythingLLM](https://github.com/Mintplex-Labs/anything-llm)                 | Your personal LLM trained on anything                                                                                                                               | 33001 |
 | [ArchiveBox](https://github.com/ArchiveBox/ArchiveBox)                       | Open source self-hosted web archiving.                                                                                                                              | 8015  |
 | [Atuin Server](https://github.com/atuinsh/atuin)                             | Magical Shell History                                                                                                                                               | 8888  |
 | [Audiobookshelf](https://github.com/advplyr/audiobookshelf)                  | Audiobookshelf is a self-hosted audiobook and podcast server.                                                                                                       | 13378 |
@@ -105,6 +95,7 @@ If you want to see new apps on Tipi you can either:
 | [flatnotes](https://github.com/Dullage/flatnotes)                            | A self-hosted, database-less note taking web app                                                                                                                    | 8137  |
 | [Flightlog](https://github.com/perdian/flightlog/)                           | Flightlog, a web application that keeps track of your personal flight history                                                                                       | 8934  |
 | [Flowise AI](https://github.com/FlowiseAI/Flowise)                           | Build LLM Apps Easily                                                                                                                                               | 8009  |
+| [Fooocus](https://github.com/lllyasviel/Fooocus)                             | A self-hosted image generation service                                                                                                                              | 7865  |
 | [Forgejo](https://codeberg.org/forgejo/forgejo/)                             | Beyond coding. We forge. · Lightweight and performant · Guaranteed 100% Free Software                                                                               | 8195  |
 | [FreshRSS](https://github.com/FreshRSS/FreshRSS)                             | A free, self-hostable aggregator…                                                                                                                                   | 8086  |
 | [gandi-livedns](https://github.com/jbbodart/gandi-livedns)                   | Update your Gandi DNS zone records with your WAN IP                                                                                                                 | 8134  |
@@ -195,6 +186,7 @@ If you want to see new apps on Tipi you can either:
 | [Mylar3](https://github.com/mylar3/mylar3)                                   | Mylar3 is an automated Comic Book downloader (cbr/cbz) for use with NZB and torrents written in python.                                                             | 8174  |
 | [n8n](https://github.com/n8n-io/n8n)                                         | Workflow Automation Tool. Alternative to Zapier                                                                                                                     | 8215  |
 | [Navidrome](https://github.com/navidrome/navidrome/)                         | A selfhosted music server                                                                                                                                           | 4533  |
+| [n.eko](https://github.com/m1k1o/neko)                                       | Self-hosted virtual browser (VNC) with WebRTC.                                                                                                                      | 8080  |
 | [Netboot.xyz](https://github.com/netbootxyz/netboot.xyz)                     | Your favorite operating systems in one place.                                                                                                                       | 8675  |
 | [Netdata](https://github.com/netdata/netdata)                                | Open-source, real-time, performance and health monitoring.                                                                                                          | 19999 |
 | [Nextcloud](https://github.com/nextcloud/server)                             | Productivity platform that keeps you in control                                                                                                                     | 8083  |
@@ -271,6 +263,7 @@ If you want to see new apps on Tipi you can either:
 | [Stalwart Mail](https://github.com/stalwartlabs)                             | Open-source mail server solution with JMAP, IMAP4, and SMTP support                                                                                                 | 8677  |
 | [Stirling-PDF](https://github.com/Frooodle/Stirling-PDF/)                    | Powerful locally hosted web based PDF manipulation tool.                                                                                                            | 8234  |
 | [Suwayomi](https://github.com/Suwayomi/docker-tachidesk)                     | An open-source manga reader server with bundled Web UI                                                                                                              | 4567  |
+| [SwarmUI](https://github.com/mcmonkeyprojects/SwarmUI)                       | A web interface for Stable Diffusion.                                                                                                                               | 8990  |
 | [Syncthing](https://github.com/syncthing)                                    | Peer-to-peer file synchronization between your devices                                                                                                              | 8090  |
 | [Tailscale](https://github.com/tailscale/tailscale)                          | The easiest, most secure way to use WireGuard and 2FA.                                                                                                              | 8093  |
 | [Tandoor](https://github.com/TandoorRecipes/recipes)                         | Recipe collection manager.                                                                                                                                          | 8341  |
