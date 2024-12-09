@@ -1,0 +1,24 @@
+{
+   "author": "lllyasviel",
+   "available": true,
+   "categories": [
+      "media",
+      "ai"
+   ],
+   "created_at": 1724134338800,
+   "description": "Fooocus is a self-hosted service for generating images from text descriptions, supporting various models and styles. It provides a simple web interface for entering text prompts and generating corresponding images.",
+   "exposable": true,
+   "id": "fooocus",
+   "name": "Fooocus",
+   "port": 7865,
+   "short_desc": "A self-hosted image generation service",
+   "source": "https://github.com/lllyasviel/Fooocus",
+   "supported_architectures": [
+      "arm64",
+      "amd64"
+   ],
+   "tipi_version": 1,
+   "updated_at": 1724134338800,
+   "version": "2.5.5"
+}
+
