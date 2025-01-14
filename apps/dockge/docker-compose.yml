@@ -1,7 +1,7 @@
 version: "3.8"
 services:
   dockge:
-    image: louislam/dockge:1.4.1
+    image: louislam/dockge:1.4.2
     container_name: dockge
     restart: unless-stopped
     ports:
@@ -39,3 +39,4 @@ services:
       traefik.http.routers.dockge-local.entrypoints: websecure
       traefik.http.routers.dockge-local.service: dockge
       traefik.http.routers.dockge-local.tls: true
+      runtipi.managed: true

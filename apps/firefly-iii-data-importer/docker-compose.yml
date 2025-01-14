@@ -2,7 +2,7 @@ version: "3.9"
 
 services:
   firefly-iii-data-importer:
-    image: fireflyiii/data-importer:version-1
+    image: fireflyiii/data-importer:version-1.5.6
     container_name: firefly-iii-data-importer
     restart: unless-stopped
     ports:
@@ -45,3 +45,4 @@ services:
       traefik.http.routers.firefly-iii-importer-local.entrypoints: websecure
       traefik.http.routers.firefly-iii-importer-local.service: firefly-iii-importer
       traefik.http.routers.firefly-iii-importer-local.tls: true
+      runtipi.managed: true

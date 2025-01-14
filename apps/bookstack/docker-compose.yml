@@ -1,10 +1,14 @@
 version: "3.7"
 services:
   bookstack:
-    image: lscr.io/linuxserver/bookstack:23.12.20240115
+    image: lscr.io/linuxserver/bookstack:24.12.20241223
     container_name: bookstack
     environment:
+      - TZ=${TZ}
       - APP_URL=${APP_PROTOCOL:-http}://${APP_DOMAIN}
+      # docker run -it --rm --entrypoint /bin/bash lscr.io/linuxserver/bookstack:latest appkey
+      # base64:O4q1ph9Gzu60Va/1nTxrqpLa1NM0xWsvGimho6PoDbA=
+      - APP_KEY=base64:${APP_KEY}
       - DB_HOST=bookstack-db
       - DB_USERNAME=tipi
       - DB_PASSWORD=${BOOKSTACK_DB_PASS}
@@ -45,12 +49,13 @@ services:
       traefik.http.routers.bookstack-local.entrypoints: websecure
       traefik.http.routers.bookstack-local.service: bookstack
       traefik.http.routers.bookstack-local.tls: true
-
+      runtipi.managed: true
   bookstack-db:
     image: lscr.io/linuxserver/mariadb
     container_name: bookstack-db
     environment:
       - TZ=${TZ}
+      - MYSQL_ROOT_PASSWORD=${ROOT_ACCESS_PASSWORD}
       - MYSQL_DATABASE=bookstackapp
       - MYSQL_USER=tipi
       - MYSQL_PASSWORD=${BOOKSTACK_DB_PASS}
@@ -59,3 +64,5 @@ services:
     restart: unless-stopped
     networks:
       - tipi_main_network
+    labels:
+      runtipi.managed: true

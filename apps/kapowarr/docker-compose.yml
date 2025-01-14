@@ -1,7 +1,7 @@
 version: "3.7"
 services:
   kapowarr:
-    image: mrcas/kapowarr:v1.0.0-beta-3
+    image: mrcas/kapowarr:v1.0.0
     container_name: kapowarr
     volumes:
       - /etc/localtime:/etc/localtime:ro
@@ -38,3 +38,4 @@ services:
       traefik.http.routers.kapowarr-local.entrypoints: websecure
       traefik.http.routers.kapowarr-local.service: kapowarr
       traefik.http.routers.kapowarr-local.tls: true
+      runtipi.managed: true

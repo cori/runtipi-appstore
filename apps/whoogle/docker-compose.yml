@@ -3,7 +3,7 @@ version: "3.7"
 services:
   whoogle:
     container_name: whoogle
-    image: benbusby/whoogle-search:0.8.4
+    image: benbusby/whoogle-search:0.9.1
     restart: unless-stopped
     networks:
       - tipi_main_network
@@ -36,3 +36,4 @@ services:
       traefik.http.routers.whoogle-local.entrypoints: websecure
       traefik.http.routers.whoogle-local.service: whoogle
       traefik.http.routers.whoogle-local.tls: true
+      runtipi.managed: true

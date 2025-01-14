@@ -1,12 +1,14 @@
-version: "3"
 services:
   overseerr:
     container_name: overseerr
-    image: sctx/overseerr:1.33.2
+    image: ghcr.io/linuxserver/overseerr:1.33.2
     environment:
+      - PUID=1000
+      - PGID=1000
       - TZ=${TZ}
     volumes:
-      - ${APP_DATA_DIR}/data/config:/app/config
+      - /etc/localtime:/etc/localtime:ro
+      - ${APP_DATA_DIR}/data/config:/config
     ports:
       - ${APP_PORT}:5055
     restart: unless-stopped
@@ -39,3 +41,4 @@ services:
       traefik.http.routers.overseerr-local.entrypoints: websecure
       traefik.http.routers.overseerr-local.service: overseerr
       traefik.http.routers.overseerr-local.tls: true
+      runtipi.managed: true

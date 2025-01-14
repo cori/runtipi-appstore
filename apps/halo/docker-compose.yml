@@ -2,7 +2,7 @@ version: "3.7"
 
 services:
   halo:
-    image: halohub/halo:2.11.3
+    image: halohub/halo:2.20.13
     container_name: halo
     restart: unless-stopped
     depends_on:
@@ -52,7 +52,7 @@ services:
       traefik.http.routers.halo-local.entrypoints: websecure
       traefik.http.routers.halo-local.service: halo
       traefik.http.routers.halo-local.tls: true
-
+      runtipi.managed: true
   halodb:
     image: postgres:latest
     container_name: halodb
@@ -71,3 +71,5 @@ services:
       - POSTGRES_USER=halo
       - POSTGRES_DB=halo
       - PGUSER=halo
+    labels:
+      runtipi.managed: true

@@ -2,7 +2,7 @@ version: '3.9'
 services:
   owncast:
     container_name: owncast
-    image: owncast/owncast:0.1.2
+    image: owncast/owncast:0.2.0
     volumes:
       - ${APP_DATA_DIR}/data:/app/data
     ports:
@@ -41,3 +41,4 @@ services:
       traefik.http.routers.owncast-local.service: owncast
       traefik.http.routers.owncast-local.tls: true
       traefik.tcp.routers.owncast-rtmp-local.rule: HostSNI(`owncast.${LOCAL_DOMAIN}`)
+      runtipi.managed: true

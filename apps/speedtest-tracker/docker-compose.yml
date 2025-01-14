@@ -1,8 +1,6 @@
-version: "3.7"
-
 services:
   speedtest-tracker:
-    image: ghcr.io/alexjustesen/speedtest-tracker:v0.14.4
+    image: lscr.io/linuxserver/speedtest-tracker:1.1.0
     container_name: speedtest-tracker
     environment:
       - PUID=1000
@@ -13,11 +11,15 @@ services:
       - DB_DATABASE=speedtest-tracker
       - DB_USERNAME=tipi
       - DB_PASSWORD=${SPEEDTEST_TRACKER_DB_PASSWORD}
+      - SPEEDTEST_SCHEDULE=${SPEEDTEST_SCHEDULE:-'30 * * * *'} # every half-hour
+      - SPEEDTEST_SERVERS=${SPEEDTEST_SERVERS:-''}
       - TZ=${TZ}
+      - APP_TIMEZONE=${TZ}
+      - DISPLAY_TIMEZONE=${TZ}
+      - APP_KEY=${SPEEDTEST_APP_KEY}
     restart: unless-stopped
     volumes:
       - ${APP_DATA_DIR}/data/speedtest-tracker/config:/config
-      - /etc/localtime:/etc/localtime:ro
     ports:
       - ${APP_PORT}:80
       - 8212:443
@@ -51,7 +53,7 @@ services:
       traefik.http.routers.speedtest-tracker-local.entrypoints: websecure
       traefik.http.routers.speedtest-tracker-local.service: speedtest-tracker
       traefik.http.routers.speedtest-tracker-local.tls: true
-
+      runtipi.managed: true
   speedtest-tracker-db:
     container_name: speedtest-tracker-db
     image: postgres:15
@@ -64,3 +66,5 @@ services:
       - ${APP_DATA_DIR}/data/postgres:/var/lib/postgresql/data
     networks:
       - tipi_main_network
+    labels:
+      runtipi.managed: true

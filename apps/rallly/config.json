@@ -1,23 +1,19 @@
 {
-  "$schema": "../schema.json",
+  "$schema": "../app-info-schema.json",
   "name": "Rallly",
   "available": true,
   "port": 8208,
   "exposable": true,
   "id": "rallly",
   "description": "Rallly is an open-source scheduling and collaboration tool designed to make organizing events and meetings easier.",
-  "tipi_version": 2,
-  "version": "3.5.0",
-  "categories": [
-    "utilities"
-  ],
+  "tipi_version": 13,
+  "version": "3.11.2",
+  "categories": ["utilities"],
   "short_desc": "Scheduling and collaboration tool",
   "author": "lukevella",
   "source": "https://github.com/lukevella/rallly",
   "website": "https://rallly.co",
-  "supported_architectures": [
-    "amd64"
-  ],
+  "supported_architectures": ["amd64"],
   "form_fields": [
     {
       "type": "random",
@@ -102,5 +98,7 @@
       "required": false,
       "env_variable": "RALLLY_SMTP_PWD"
     }
-  ]
+  ],
+  "created_at": 1691943801422,
+  "updated_at": 1729521953000
 }

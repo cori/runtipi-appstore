@@ -1,7 +1,7 @@
 version: "3.7"
 services:
   serge:
-    image: ghcr.io/serge-chat/serge:0.8.2
+    image: ghcr.io/serge-chat/serge:0.9.0
     container_name: serge
     restart: unless-stopped
     ports:
@@ -36,3 +36,4 @@ services:
       traefik.http.routers.serge-local.entrypoints: websecure
       traefik.http.routers.serge-local.service: serge
       traefik.http.routers.serge-local.tls: true
+      runtipi.managed: true

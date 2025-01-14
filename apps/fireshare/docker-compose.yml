@@ -3,7 +3,7 @@ version: "3"
 services:
   fireshare:
     container_name: fireshare
-    image: shaneisrael/fireshare:v1.2.19
+    image: shaneisrael/fireshare:v1.2.20
     ports:
       - ${APP_PORT}:80
     volumes:
@@ -44,3 +44,4 @@ services:
       traefik.http.routers.fireshare-local.entrypoints: websecure
       traefik.http.routers.fireshare-local.service: fireshare
       traefik.http.routers.fireshare-local.tls: true
+      runtipi.managed: true

@@ -1,11 +1,12 @@
 {
-  "$schema": "../schema.json",
+  "$schema": "../app-info-schema.json",
   "name": "Planning Poker",
   "port": 8880,
   "available": true,
   "exposable": true,
+  "dynamic_config": true,
   "id": "planning-poker",
-  "tipi_version": 1,
+  "tipi_version": 3,
   "version": "1.2.1",
   "categories": ["development"],
   "description": "",
@@ -13,5 +14,7 @@
   "author": "axeleroy",
   "source": "https://github.com/axeleroy/self-host-planning-poker",
   "form_fields": [],
-  "supported_architectures": ["amd64", "arm64"]
+  "supported_architectures": ["amd64", "arm64"],
+  "created_at": 1691943801422,
+  "updated_at": 1734908563647
 }
