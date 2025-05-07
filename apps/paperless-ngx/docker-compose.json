@@ -2,7 +2,7 @@
   "services": [
     {
       "name": "paperless-ngx",
-      "image": "ghcr.io/paperless-ngx/paperless-ngx:2.14.7",
+      "image": "ghcr.io/paperless-ngx/paperless-ngx:2.15.3",
       "isMain": true,
       "internalPort": 8000,
       "environment": {
@@ -15,7 +15,7 @@
         "PAPERLESS_TIKA_ENDPOINT": "http://tika:9998",
         "PAPERLESS_URL": "${APP_PROTOCOL:-http}://${APP_DOMAIN}",
         "COMPOSE_PROJECT_NAME": "paperless-ngx",
-        "PAPERLESS_CSRF_TRUSTED_ORIGINS": "https://paperless-ngx.${LOCAL_DOMAIN},https://${APP_DOMAIN},http://${INTERNAL_IP}:${APP_PORT}"
+        "PAPERLESS_CSRF_TRUSTED_ORIGINS": "https://${APP_ID}.${LOCAL_DOMAIN},https://${APP_DOMAIN},http://${INTERNAL_IP}:${APP_PORT}"
       },
       "dependsOn": ["db", "broker"],
       "volumes": [
