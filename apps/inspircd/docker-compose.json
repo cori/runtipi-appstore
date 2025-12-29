@@ -1,9 +1,10 @@
 {
-  "$schema": "../dynamic-compose-schema.json",
+  "schemaVersion": 2,
+  "$schema": "https://schemas.runtipi.io/v2/dynamic-compose.json",
   "services": [
     {
       "name": "inspircd",
-      "image": "inspircd/inspircd-docker:3.18.0",
+      "image": "inspircd/inspircd-docker:4.9.0",
       "isMain": true,
       "internalPort": 6697,
       "volumes": [

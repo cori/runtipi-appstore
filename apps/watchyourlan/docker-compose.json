@@ -2,7 +2,7 @@
   "services": [
     {
       "name": "watchyourlan",
-      "image": "aceberg/watchyourlan:2.1.2",
+      "image": "aceberg/watchyourlan:2.1.4",
       "internalPort": 8840,
       "isMain": true,
       "networkMode": "host",
@@ -12,11 +12,18 @@
           "containerPath": "/data/WatchYourLAN"
         }
       ],
-      "environment": {
-        "TZ": "${TZ}",
-        "IFACES": "${WATCHYOURLAN_IFACES}"
-      }
+      "environment": [
+        {
+          "key": "TZ",
+          "value": "${TZ}"
+        },
+        {
+          "key": "IFACES",
+          "value": "${WATCHYOURLAN_IFACES}"
+        }
+      ]
     }
   ],
-  "$schema": "../dynamic-compose-schema.json"
+  "schemaVersion": 2,
+  "$schema": "https://schemas.runtipi.io/v2/dynamic-compose.json"
 }

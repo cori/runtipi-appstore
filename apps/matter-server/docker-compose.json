@@ -1,9 +1,10 @@
 {
-  "$schema": "../dynamic-compose-schema.json",
+  "schemaVersion": 2,
+  "$schema": "https://schemas.runtipi.io/v2/dynamic-compose.json",
   "services": [
     {
       "name": "matter-server",
-      "image": "ghcr.io/home-assistant-libs/python-matter-server:7.0.1",
+      "image": "ghcr.io/home-assistant-libs/python-matter-server:8.1.0",
       "isMain": true,
       "networkMode": "host",
       "volumes": [

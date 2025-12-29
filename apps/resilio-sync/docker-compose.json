@@ -1,9 +1,8 @@
 {
-  "$schema": "../dynamic-compose-schema.json",
   "services": [
     {
       "name": "resilio-sync",
-      "image": "lscr.io/linuxserver/resilio-sync:3.0.3",
+      "image": "lscr.io/linuxserver/resilio-sync:3.1.2",
       "isMain": true,
       "internalPort": 8888,
       "addPorts": [
@@ -12,10 +11,16 @@
           "containerPort": 55555
         }
       ],
-      "environment": {
-        "PUID": "1000",
-        "PGID": "1000"
-      },
+      "environment": [
+        {
+          "key": "PUID",
+          "value": "1000"
+        },
+        {
+          "key": "PGID",
+          "value": "1000"
+        }
+      ],
       "volumes": [
         {
           "hostPath": "${APP_DATA_DIR}/data/config",
@@ -31,5 +36,7 @@
         }
       ]
     }
-  ]
+  ],
+  "schemaVersion": 2,
+  "$schema": "https://schemas.runtipi.io/v2/dynamic-compose.json"
 }

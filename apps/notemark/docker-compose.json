@@ -2,15 +2,21 @@
   "services": [
     {
       "name": "notemark",
-      "image": "ghcr.io/enchant97/note-mark-frontend:0.14.1"
+      "image": "ghcr.io/enchant97/note-mark-frontend:0.16.3"
     },
     {
       "name": "notemark-backend",
-      "image": "ghcr.io/enchant97/note-mark-backend:0.14.1",
-      "environment": {
-        "JWT_SECRET": "${NOTEMARK_SERVICE_SECRET}",
-        "CORS_ORIGINS": "*"
-      },
+      "image": "ghcr.io/enchant97/note-mark-backend:0.18.0",
+      "environment": [
+        {
+          "key": "JWT_SECRET",
+          "value": "${NOTEMARK_SERVICE_SECRET}"
+        },
+        {
+          "key": "CORS_ORIGINS",
+          "value": "*"
+        }
+      ],
       "volumes": [
         {
           "hostPath": "${APP_DATA_DIR}/data",
@@ -20,7 +26,7 @@
     },
     {
       "name": "notemark-proxy",
-      "image": "ghcr.io/enchant97/note-mark-frontend:0.15.4",
+      "image": "ghcr.io/enchant97/note-mark-frontend:0.18.0",
       "isMain": true,
       "internalPort": 80,
       "volumes": [
@@ -32,5 +38,6 @@
       ]
     }
   ],
-  "$schema": "../dynamic-compose-schema.json"
+  "schemaVersion": 2,
+  "$schema": "https://schemas.runtipi.io/v2/dynamic-compose.json"
 }

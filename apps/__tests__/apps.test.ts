@@ -1,4 +1,5 @@
 import fs from "node:fs";
+import { parseComposeJson } from "@runtipi/common/schemas";
 import jsyaml from "js-yaml";
 
 type FormField = {
@@ -59,7 +60,7 @@ const getAppConfigs = (): AppConfig[] => {
         if (config.available) {
           apps.push(config);
         }
-      } catch (e) {
+      } catch (_) {
         console.error("Error parsing config file", app);
       }
     }
@@ -73,6 +74,24 @@ describe("App configs", () => {
     const apps = getAppConfigs();
 
     expect(apps.length).toBeGreaterThan(0);
+  });
+
+  describe("Each app should be parsable by @runtipi/common", () => {
+    const apps = getAppConfigs();
+
+    for (const app of apps) {
+      const dockerComposeFile = fs.readFileSync(`./apps/${app.id}/docker-compose.json`).toString();
+      const composeJson = JSON.parse(dockerComposeFile);
+
+      test(app.id, () => {
+        try {
+          const res = parseComposeJson(composeJson);
+          expect(res).toBeDefined();
+        } catch (err) {
+          expect(err).toBeUndefined();
+        }
+      });
+    }
   });
 
   describe("Each app should have an id", () => {
@@ -208,7 +227,7 @@ describe("App configs", () => {
         const dockerCompose = jsyaml.load(dockerComposeFile) as { services: Record<string, { container_name: string }> };
 
         expect(dockerCompose.services[app.id]).toBeDefined();
-        expect(dockerCompose.services[app.id].container_name).toBe(app.id);
+        expect(dockerCompose?.services[app.id]?.container_name).toBe(app.id);
       });
     }
   });
@@ -224,11 +243,11 @@ describe("App configs", () => {
         const dockerCompose = jsyaml.load(dockerComposeFile) as { services: Record<string, { image: string }> };
 
         expect(dockerCompose.services[app.id]).toBeDefined();
-        expect(dockerCompose.services[app.id].image).toBeDefined();
+        expect(dockerCompose.services[app.id]?.image).toBeDefined();
 
-        const dockerImage = dockerCompose.services[app.id].image;
+        const dockerImage = dockerCompose.services[app.id]?.image;
 
-        const version = dockerImage.split(":")[1];
+        const version = dockerImage?.split(":")[1];
 
         expect(version).toContain(app.version);
       });
@@ -247,8 +266,8 @@ describe("App configs", () => {
 
           expect(dockerCompose.services[app.id]).toBeDefined();
 
-          expect(dockerCompose.services[app.id].networks).toBeDefined();
-          expect(dockerCompose.services[app.id].networks).toContain("tipi_main_network");
+          expect(dockerCompose.services[app.id]?.networks).toBeDefined();
+          expect(dockerCompose.services[app.id]?.networks).toContain("tipi_main_network");
         }
       });
     }
@@ -265,7 +284,7 @@ describe("App configs", () => {
 
         const services = dockerCompose.services;
         const labelDoesNotExist = Object.keys(services).some((service) => {
-          const labels = services[service].labels || {};
+          const labels = services[service]?.labels || {};
           if (labels) {
             return !labels["runtipi.managed"];
           }
