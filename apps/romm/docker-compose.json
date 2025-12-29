@@ -69,7 +69,7 @@
     },
     {
       "name": "romm-db",
-      "image": "lscr.io/linuxserver/mariadb:11.4.4",
+      "image": "lscr.io/linuxserver/mariadb:11.4.8",
       "environment": [
         {
           "key": "MYSQL_ROOT_PASSWORD",
